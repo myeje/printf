@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdarg.h>
 
 /**
@@ -41,14 +41,14 @@ int (*check_format(const char *format))(va_list)
  */
 int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list list;
 	int (*f)(va_list);
 	unsigned int i = 0, counter = 0;
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(ap, format);
+	va_start(list, format);
 	while (format && format[i])
 	{
 		if (format[i] != '%')
@@ -73,12 +73,12 @@ int _printf(const char *format, ...)
 				if (f == NULL)
 					return (-1);
 				i += 2;
-				counter += f(ap);
+				counter += f(list);
 				continue;
 			}
 		}
 		i++;
 	}
-	va_end(ap);
+	va_end(list);
 	return (counter);
 }
