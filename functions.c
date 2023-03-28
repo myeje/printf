@@ -74,7 +74,8 @@ int print_string(va_list types, char buffer[],
 	return (write(1, str, length));
 }
 
- /* print_percent - Function prints out %
+/**
+ * print_percent - Function prints out %
  * @types: lists of variable arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -122,9 +123,9 @@ int print_int(va_list types, char buffer[],
 	num = (unsigned long int)n;
 
 	if (n < 0)
-      {
-		num = (unsigned long int)((-1) * n);
-		is_negative = 1;
+	{
+	      num = (unsigned long int)((-1) * n);
+	      is_negative = 1;
 	}
 
 	while (num > 0)
@@ -138,7 +139,8 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
- /* print_binary - Function prints out an unsigned number
+/**
+ * print_binary - Function prints out an unsigned number
  * @types: lists of variable arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -164,7 +166,7 @@ int print_binary(va_list types, char buffer[],
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 	for (i = 1; i < 32; i++)
-      {
+	{
 		m /= 2;
 		a[i] = (n / m) % 2;
 	}
