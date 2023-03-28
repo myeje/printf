@@ -11,6 +11,6 @@ int print_c(va_list c)
 {
 	char print_char = (char)va_arg(c, int);
 
-	printf("%c", print_char);
+	_putchar(print_char);
 	return (1);
 }
