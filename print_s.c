@@ -14,7 +14,7 @@ int print_s(va_list s)
 	char *str = va_arg(s, char *);
 
 	if (str == NULL)
-		str = "NULL";
+		str = "(NULL)";
 
 	while (str[i])
 		_putchar(str[i++]);
